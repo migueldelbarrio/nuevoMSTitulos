@@ -1,0 +1,22 @@
+
+	
+  	<% if (!(typeof error_verify === 'undefined' )){  %>
+  	<span style="color:red;display:block; text-align:center">El título introducido no consta en la base de datos de murciaSTUDIO</span>
+  	<% } %>
+
+  	<div id="wrap" style="width:100%; height:100vh;display: table; text-align:center; background: url('/images/titulos.png')no-repeat; background-size:50%; background-position:50%;">
+
+
+  	<form method='get' action="/verify" style="display:table-cell;vertical-align:middle; width:200px; margin: auto">
+
+  		<input style="margin-top:150px;text-align:center" type="text" name="title_code" placeholder="Código del título"/>
+  		<button type="submit"><i class="fa fa-refresh"></i>
+</button>
+
+  	</form>
+  	</div>
+    
+    
+    <footer><p>Verificador de Títulos de murciaSTUDIO<i class="fa fa-copyright"></i>
+. Todos los derechos reservados</p></footer>
+  

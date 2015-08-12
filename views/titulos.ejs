@@ -1,0 +1,36 @@
+<% include admin_header.ejs %>
+
+<div id="wrap_titles" style="text-align:center">
+<h1>Títulos</h1>
+
+<table style="margin:0 auto">
+	<thead>
+		<tr>
+			<td>Nombre</td><td>Apellidos</td><td>DNI</td><td>Teléfono</td><td>Curso</td><td>Horas</td><td>Código</td><td>Inicio</td><td>Fin</td>
+		</tr>
+	</thead>
+
+	<tbody>
+
+<% for(var i in titulos) { %>
+	<tr>
+
+		<td><%= titulos[i].nombre %></td>
+		<td><%= titulos[i].apellidos %></td>
+		<td><%= titulos[i].dni %></td>
+		<td><%= titulos[i].telefono %></td>
+		<td><%= titulos[i].curso %></td>
+		<td><%= titulos[i].horas %></td>
+		<td><%= titulos[i].codigo %></td>
+		<td><%= titulos[i].inicio %></td>
+		<td><%= titulos[i].fin %></td>
+		<td><a href="/titles/<%= titulos[i].id %>/render"><i class="fa fa-print"></i>Renderizar</a></td>
+		<td><a href="/titles/<%= titulos[i].id %>/edit">Editar</a></td>
+		<td><form method="post" action="/titles/<%= titulos[i].id %>?_method=delete"><button type="submit" onclick="return confirm('¿Seguro que desea liminar el título?');"><i class="fa fa-trash"></i>
+ </button></form></td>
+
+	</tr>
+<% } %>
+
+	</tbody>
+</table>

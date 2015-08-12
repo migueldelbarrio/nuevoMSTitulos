@@ -1,0 +1,20 @@
+<h1  style="text-align:center">Acceso</h1>
+
+<fieldset id="access_panel" style="text-align:center">
+
+	<% if (session.error) { %>
+		<span style="color:red"> <%= session.error %>  </span>
+	<% } %>
+	<form method="post" action="/login">
+	<label>Nombre: </label><input type="text" name="nombre"/><br/>
+	<label>Clave: </label><input type="text" name="clave"/><br/>
+	<input type="submit" value="Enviar"/>
+
+	<span color:blue> <%=  session.redir %></span>
+
+
+	</form>
+
+
+
+</fieldset>
