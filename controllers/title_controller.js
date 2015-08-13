@@ -94,7 +94,7 @@ exports.get_titles = function(req,res){
 
 exports.create_dummy = function(req,res){
 
-	model.Titulo.create({nombre:'Dummy', apellidos:'Dummy', dni:'Dummy', telefono:666666666, curso:'Dummy', horas:24}).then(function(titulos){
+	model.Titulo.create({nombre:'Dummy', apellidos:'Dummy', dni:'Dummy', telefono:666666666, curso:'Dummy', horas:24, tipo:'asistencia', nota:50}).then(function(titulos){
 
 
 		res.redirect('/titles');
@@ -141,7 +141,7 @@ exports.add_title = function(req,res){
 										
 											console.log("El código generado NO existe");
 											
-											model.Titulo.create({nombre:req.body.n_alumno, apellidos:req.body.a_alumno, dni:req.body.dni, telefono:req.body.telefono, curso:req.body.curso, horas:req.body.horas, codigo:aleatorio, inicio: req.body.inicio, fin:req.body.fin}).then(function(titulos){
+											model.Titulo.create({nombre:req.body.n_alumno, apellidos:req.body.a_alumno, dni:req.body.dni, telefono:req.body.telefono, curso:req.body.curso, horas:req.body.horas, codigo:aleatorio, inicio: req.body.inicio, fin:req.body.fin, tipo:req.body.tipo, nota:req.body.nota}).then(function(titulos){
 											
 											res.redirect('/titles');
 											

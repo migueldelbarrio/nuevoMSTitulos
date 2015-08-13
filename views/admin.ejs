@@ -23,7 +23,16 @@
 
 			<label>Inicio: </label><input type="text" name="inicio" placeholder="29 de Junio de 2015" required>
 			<label>Fin: </label><input type="text" name="fin" placeholder="30 de Julio de 2015" required><br/>
+		
+		<select name="tipo" required>
+		<option value="SUPERACIÓN">Superación</option>
+		<option value="ASISTENCIA">Asistencia</option>
+
+		</select>
+		<input type="number" name="nota" placeholder="Nota" min="1" max="100" required><br/>
 		<input type="submit" value="Enviar">
+
+
 	</form>
 
 	<% if (locals.error_title){ %>
