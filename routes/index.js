@@ -66,6 +66,7 @@ router.get('/admin', titleController.admin_panel);
 router.get('/titles', titleController.get_titles);
 router.get('/titles/:titleId(\\d+)/render', titleController.render);
 router.delete('/titles/:titleId(\\d+)',titleController.delete);
+router.get('/titles/:titleId(\\d+)/edit', titleController.edit);
 
 router.get('/dummy',sessionController.loginRequired, titleController.create_dummy);
 router.put('/admin/add_title', titleController.add_title);

@@ -106,6 +106,19 @@ exports.create_dummy = function(req,res){
 
 }
 
+exports.edit = function(req,res){
+
+model.Curso.findAll().then(function(courses){
+
+
+		res.render('title_edit',{title:req.title, curso: req.curso, cursos:courses});
+	});
+
+
+
+
+}
+
 
 exports.add_title = function(req,res){
 

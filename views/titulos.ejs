@@ -26,8 +26,8 @@
 		<td><%= titulos[i].fin %></td>
 		<td><%= titulos[i].tipo %></td>
 		<td><%= titulos[i].nota %></td>
-		<td><a href="/titles/<%= titulos[i].id %>/render"><i class="fa fa-print"></i>Renderizar</a></td>
-		<td><a href="/titles/<%= titulos[i].id %>/edit">Editar</a></td>
+		<td><a href="/titles/<%= titulos[i].id %>/render"><button><i style="color:#343E40" class="fa fa-print"></i></button></a></td>
+		<td><a href="/titles/<%= titulos[i].id %>/edit"><button><i class="fa fa-pencil-square-o"></i></button></a></td>
 		<td><form method="post" action="/titles/<%= titulos[i].id %>?_method=delete"><button type="submit" onclick="return confirm('¿Seguro que desea liminar el título?');"><i class="fa fa-trash"></i>
  </button></form></td>
 
