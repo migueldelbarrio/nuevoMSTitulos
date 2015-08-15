@@ -67,12 +67,14 @@ router.get('/titles', titleController.get_titles);
 router.get('/titles/:titleId(\\d+)/render', titleController.render);
 router.delete('/titles/:titleId(\\d+)',titleController.delete);
 router.get('/titles/:titleId(\\d+)/edit', titleController.edit);
+router.put('/admin/:titleId(\\d+)/edit', titleController.update)
 
 router.get('/dummy',sessionController.loginRequired, titleController.create_dummy);
 router.put('/admin/add_title', titleController.add_title);
 
 router.put('/admin/add_course', courseController.add_course);
 router.get('/courses', courseController.get_courses);
+router.delete('/courses/:courseId(\\d+)', courseController.delete);
 //router.get('/admin/add_title', titleController.add_title);
 
 module.exports = router;

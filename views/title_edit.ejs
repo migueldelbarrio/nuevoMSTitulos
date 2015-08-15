@@ -3,12 +3,12 @@
 <div id="wrap" style="max-width:1000px; margin:0 auto">
 
 <fieldset style="text-align:center">
-	<label>Generar un nuevo título</label>
-	<form method="POST" action="/admin/add_title?_method=PUT">
-		<input type="text" name="n_alumno" placeholder="<%= title.nombre %>" required>
-		<input type="text" name="a_alumno" placeholder="<%= title.apellidos %>" required>
-		<input type="text" name="dni" placeholder="<%= title.dni %>" required>
-		<input type="number" name="telefono" placeholder="<%= title.telefono %>" min="600000000" max="799999999" required>
+	<label>Modificar el título con ID <%= title.id %></label>
+	<form method="POST" action="/admin/<%= title.id %>/edit?_method=PUT">
+		<input type="text" name="n_alumno" value="<%= title.nombre %>" required>
+		<input type="text" name="a_alumno" value="<%= title.apellidos %>" required>
+		<input type="text" name="dni" value="<%= title.dni %>" required>
+		<input type="number" name="telefono" value="<%= title.telefono %>" min="600000000" max="799999999" required>
 		
 		<select name="curso" required>
 			<option value="<%= title.curso %>"><%= title.curso %></option>
@@ -18,19 +18,19 @@
 			<% } %>
 
 		</select>
-		<input type="number" name="horas" placeholder="Horas" min="1" max="300" required><%= title.horas %></input><br/>
+		<input type="number" name="horas" value="<%= title.horas %>" min="1" max="300" required></input><br/>
 
-			<label>Inicio: </label><input type="text" name="inicio" placeholder="<%= title.inicio %>" required>
-			<label>Fin: </label><input type="text" name="fin" placeholder="<%= title.fin %>" required><br/>
+			<label>Inicio: </label><input type="text" name="inicio" value="<%= title.inicio %>" required>
+			<label>Fin: </label><input type="text" name="fin" value="<%= title.fin %>" required><br/>
 		
 		<select name="tipo" required>
-		<option value="<%= title.tipo %>"</option>
+		<option value="<%= title.tipo %>"><%= title.tipo %></option>
 		<option value="SUPERACIÓN">Superación</option>
 		<option value="ASISTENCIA">Asistencia</option>
 
 		</select>
-		<input type="number" name="nota" placeholder="<%= title.nota %>" min="1" max="100" required><br/>
-		<input type="submit" value="Enviar">
+		<input type="number" name="nota" value="<%= title.nota %>" min="1" max="100" required><br/>
+		<input type="submit" value="Actualizar">
 
 
 	</form>

@@ -49,3 +49,13 @@ exports.add_course = function(req,res){
 
 
 }
+
+exports.delete = function(req,res){
+
+
+  req.curso.destroy().then(function(){ res.redirect('/courses')})
+
+
+
+
+};

@@ -18,9 +18,8 @@
 		<td><%= cursos[i].id %></td>
 		<td><%= cursos[i].nombre %></td>
 		<td><%- cursos[i].temario %></td>
-		<td><a href="courses/<%- cursos[i].id %>/show">Ver</a></td>	
-		<td><a href="courses/<%- cursos[i].id %>/editar">Editar</a></td>	
-		<td><a href="courses/<%- cursos[i].id %>/eliminar">Eliminar</a></td>		
+		<td><form method="post" action="/courses/<%= cursos[i].id %>?_method=delete"><button type="submit" onclick="return confirm('¿Seguro que desea liminar el curso?');"><i class="fa fa-trash"></i>
+ </button></form></td>		
 	</tr>
 <% } %>
 

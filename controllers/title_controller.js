@@ -30,7 +30,39 @@ exports.load = function(req,res,next,titleId){
 exports.delete = function(req,res){
 
 
-  req.title.destroy().then(function(){ res.redirect('/admin')})
+  req.title.destroy().then(function(){ res.redirect('/titles')})
+
+
+
+
+};
+
+exports.update = function(req,res){
+
+req.title.nombre = req.body.n_alumno;
+req.title.apellidos = req.body.a_alumno;
+req.title.dni = req.body.dni;
+req.title.telefono = req.body.telefono;
+req.title.curso = req.body.curso;
+req.title.horas = req.body.horas;
+req.title.codigo = 'code';
+req.title.inicio = req.body.inicio;
+req.title.fin = req.body.fin;
+req.title.tipo = req.body.tipo;
+req.title.nota = req.body.nota;
+
+ req.title.validate().then(function(err){ 
+    if (err){ 
+      res.render('title_edit',{titulo:req.title, errors:err.errors});
+    } 
+   else{  
+    req.title.save({fields:['nombre','apellidos', 'dni','telefono','curso','horas','inicio','fin','tipo','nota']}).then(function(){res.redirect('/titles')});  
+
+    }    
+
+  });
+
+  
 
 
 
