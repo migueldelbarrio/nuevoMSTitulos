@@ -38,21 +38,27 @@ sequelize.sync().then(function(){
 
 	Titulo.count().then(function(count){
 		if(count==0){
-			var aleatorio= randomstring.generate(10);
-		Titulo.create({nombre:'Jose', apellidos:'Gutierrez', dni:'48522344A',telefono:666666666,curso:'Premiere', horas:23, codigo:aleatorio, inicio:'29 de Junio de 2015', fin:'30 de Julio de 2015', tipo:'SUPERACIÓN', nota:75}).
+			//var aleatorio= randomstring.generate(10);
+		Titulo.create({nombre:'Alumno de', apellidos:'murciaSTUDIO', dni:'55555555A',telefono:666666666,curso:'Premiere', horas:24, codigo:'tID2MSIzjx', inicio:'29 de Junio', fin:'30 de Julio de 2015', tipo:'SUPERACIÓN', nota:75}).
 		then(function(){console.log('DB Titulo inicializada')});
 	}
 	});
 
 	Curso.count().then(function(count){
 		if(count==0){
-		Curso.create({nombre:'Premiere', temario:'<h1>Temario de Premiere</h1>'}).
+		Curso.create({nombre:'Adobe Premiere CC', temario:'<p><strong>Unidad 1:Entorno de trabajo</strong></p>
+<p><strong>Unidad 2:Trazados de forma libre. Creación y modificación de trazados</strong></p>
+<p><strong>Unidad 3:Acciones sobre objetos. Herramientas de transformación</strong></p>
+<p><strong>Unidad 4:Introducir texto. Trabajo con texto y trazados. Modos de color. Atributos de color. Degradados.</strong></p>
+<p><strong>Unidad 5:capas en Illustrator. Estructura de capas. Opciones de capa (bloqueo/desbloqueo, selecciones). Capas anidadas. Desplazamiento de objetos en capas</strong></p>
+<p><strong>Unidad 6:Mallas, fusiones, expandir invertir y soltar. Los degradados y Mallas de degradado. Examinar Fusiones. Degradados unificados. Uso de transparencias en Illustrator. Máscaras de opacidad y colores transparentes</strong></p>
+<p><strong>Unidad 7:Importación de vectoriales y Bitmaps. Importación de texto. Exportar bitmaps y vectoriales. Exportar textos. Exportar como archivo Photoshop. Exportar como archivo de Flash</strong></p>'}).
 		then(function(){console.log('DB Curso inicializada')});
 	}
 	});
 	Usuario.count().then(function(count){
 		if(count==0){
-		Usuario.create({nombre:'murciastudio', clave:'Andalucia01', perfil:'Administrador'}).
+		Usuario.create({nombre:'murciastudio', clave:'Info01Andalucia01', perfil:'Administrador'}).
 		then(function(){console.log('DB Usuarios inicializada')});
 	}
 	});
