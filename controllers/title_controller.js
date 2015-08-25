@@ -77,8 +77,8 @@ exports.verify = function(req,res){
 		if (titulo){
 			model.Curso.findOne({ where: { nombre: titulo.curso } }).then(function(curso){
 
-						var qr = qrCode.qrcode(4, 'M');
-						qr.addData(titulo.codigo);
+						var qr = qrCode.qrcode(4, 'L');
+						qr.addData('https://titulosms.herokuapp.com/verify?title_code='+titulo.codigo);
 						qr.make();
 						var qr_send=qr.createImgTag(4);
 						
@@ -162,7 +162,7 @@ exports.add_title = function(req,res){
 	(function loop(){
 						console.log('Iteracion: '+iteracion);
 						iteracion++;
-						var aleatorio= randomstring.generate(20);
+						var aleatorio= randomstring.generate(10);
 						
 
 						if(!req.body.dni.match(/^\d{8}[a-zA-Z]$/)){
@@ -204,8 +204,8 @@ exports.add_title = function(req,res){
 
 exports.render = function(req,res){
 
-	var qr = qrCode.qrcode(4, 'M');
-	qr.addData(req.title.codigo);
+	var qr = qrCode.qrcode(4, 'L');
+	qr.addData('https://titulosms.herokuapp.com/verify?title_code='+req.title.codigo);
 	qr.make();
 	var qr_send=qr.createImgTag(4);
 

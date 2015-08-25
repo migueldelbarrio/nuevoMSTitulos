@@ -38,7 +38,7 @@ sequelize.sync().then(function(){
 
 	Titulo.count().then(function(count){
 		if(count==0){
-			var aleatorio= randomstring.generate(20);
+			var aleatorio= randomstring.generate(10);
 		Titulo.create({nombre:'Jose', apellidos:'Gutierrez', dni:'48522344A',telefono:666666666,curso:'Premiere', horas:23, codigo:aleatorio, inicio:'29 de Junio de 2015', fin:'30 de Julio de 2015', tipo:'SUPERACIÓN', nota:75}).
 		then(function(){console.log('DB Titulo inicializada')});
 	}

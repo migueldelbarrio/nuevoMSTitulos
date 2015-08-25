@@ -5,15 +5,15 @@
 
 <h4 style="text-align:right; padding-top:4cm;padding-right:5cm"><img src="/images/logo_MS.png" style="width:10%; display:block; position:absolute; left:3.8cm; top:2.8cm;"/>
 murciaSTUDIO. Del <%= titulo.inicio %> al <%= titulo.fin %>, Murcia</h4>
-<h1 style="font-size:1.5cm;padding-top:0.8cm; color:navy; text-align:center">CERTIFICADO DE <%= titulo.tipo %></h1>
-<div id="wrap" style="text-align:left; font-size:0.8cm; padding-left:5cm">
+<h1 style="font-size:1.5cm;padding-top:0.5cm; color:navy; text-align:center">CERTIFICADO DE <%= titulo.tipo %></h1>
+<div id="wrap" style="text-align:left; font-size:0.8cm; padding-left:5cm; padding-top:0.5cm;float:left; line-height:140%">
 A favor de <%= titulo.nombre %> <%= titulo.apellidos %> </br>
 DNI: <%= titulo.dni%></br>
 Curso impartido: <%= titulo.curso %></br>
 Duración: <%= titulo.horas %> horas presenciales.</br>
 Código de verificación: <%= titulo.codigo %></br>
 </div>
-<div style="text-align:left;padding-left:18.5cm">
+<div id="qr" style="text-align:left;padding-left:21cm;padding-top:3.8cm">
 <%- qr %>
 </div>
 
