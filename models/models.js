@@ -58,7 +58,7 @@ sequelize.sync().then(function(){
 	});
 	Usuario.count().then(function(count){
 		if(count==0){
-		Usuario.create({nombre:'murciastudio', clave:'Info01Andalucia01', perfil:'Administrador'}).
+		Usuario.create({nombre:'murciastudio', clave:'1234', perfil:'Administrador'}).
 		then(function(){console.log('DB Usuarios inicializada')});
 	}
 	});
