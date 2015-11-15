@@ -32,13 +32,7 @@ var content;
 
 
 
-var app = express();
-var Ftp = new JSFtp({
-  host: '91.146.101.137',
-  port: 21, // defaults to 21 
-  user: "titulos", // defaults to "anonymous" 
-  pass: "adsl8120" // defaults to "@anonymous" 
-});
+
 
 
 
@@ -70,32 +64,7 @@ Ftp.raw.mkd("./new_dir2", function(err, data) {
 
 
 
-       Ftp.auth( 'titulos' , 'adsl8120' , function (err , auth_res){
-                                console.log('reconnecting....');
-                                if(err){
-                                    console.log('BAD!!!!!');
-                                }else{
-                                    console.log('OK!!!!');
-                                    Ftp.put(buffer, remote, function(err) {
-                                     if (err) {
-                                         console.error(err);
-                                          console.log(" -error uploaded successfuly");
-                                         
-                                     }
-                                     else {
-                                         console.log(" - uploaded successfuly");
-                                         
-                                     }
-                                 });
-
-                                    Ftp.raw.mkd("./new_dir2", function(err, data) {
-                                        if (err) return console.error(err);
-                                     
-                                        console.log(data.text); // Show the FTP response text to the user 
-                                        console.log(data.code); // Show the FTP response code to the user 
-                                    });
-                                }
-        });
+      
 
 
 
